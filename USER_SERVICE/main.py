@@ -16,10 +16,10 @@ settings = get_settings()
 url_signup = f'{settings.user_svc_prc_host}/signup'
 
 def get_url_activate(user_id:int):
-    return f'{settings.user_svc_prs_host}/activate/{user_id}'
+    return f'{settings.user_svc_prc_host}/activate/{user_id}'
 
 def get_url_deactivate(user_id:int):
-    return f'{settings.user_svc_prs_host}/deactivate/{user_id}'
+    return f'{settings.user_svc_prc_host}/deactivate/{user_id}'
 
 logger.info('   Initiliazing Fast API app')
 app = FastAPI(title="FastAPI")
