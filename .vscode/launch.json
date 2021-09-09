@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "env": {"RUN_ENV" : "dev"},
+            "args": [
+                "USER_SERVICE.main:app",
+                "--log-config",
+                "log4py.yaml",
+                "--port",
+                "7003"
+            ],
+            "jinja": true
+        }
+    ]
+}
