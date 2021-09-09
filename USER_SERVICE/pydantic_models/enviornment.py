@@ -3,7 +3,7 @@ from pydantic import BaseSettings, Field
 
 class Settings(BaseSettings):
     run_env:str = Field(..., env='RUN_ENV')
-    user_svc_pcs_host:str = Field(..., env='USER_SVC_PRC_HOST')
+    user_svc_prc_host:str = Field(..., env='USER_SVC_PRC_HOST')
 
     class Config:
         env_file = None
