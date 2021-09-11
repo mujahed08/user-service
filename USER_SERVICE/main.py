@@ -24,7 +24,7 @@ def get_url_deactivate(user_id:int):
 logger.info('   Initiliazing Fast API app')
 app = FastAPI(title="FastAPI")
 
-@app.post("/signup", response_model=Response)
+@app.post("/user-service/signup", response_model=Response)
 async def signup(user:UserIn):
     logger.info('   signup function is executing')
     logger.info(user.json())
@@ -35,12 +35,12 @@ async def signup(user:UserIn):
             logger.info(data1)
             return Response(code=200, message='SUCCESS', data=data1)
 
-@app.get("/deactivate/{user_id}", response_model=Response)
+@app.get("/user-service/deactivate/{user_id}", response_model=Response)
 async def deactivate(user_id:int):
     logger.info('   deactivate function is executing')
     return await toggle_enabled(user_id, False)
 
-@app.get("/activate/{user_id}", response_model=Response)
+@app.get("/user-service/activate/{user_id}", response_model=Response)
 async def activate(user_id:int):
     logger.info('   activate function is executing')
     return await toggle_enabled(user_id, True)
