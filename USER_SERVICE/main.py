@@ -13,13 +13,13 @@ logger = get_logger('main.py')
 
 settings = get_settings()
 
-url_signup = f'{settings.user_svc_prc_host}/signup'
+url_signup = f'{settings.reverse_proxy_host}/user-service-process/signup'
 
 def get_url_activate(user_id:int):
-    return f'{settings.user_svc_prc_host}/activate/{user_id}'
+    return f'{settings.reverse_proxy_host}/user-service-process/activate/{user_id}'
 
 def get_url_deactivate(user_id:int):
-    return f'{settings.user_svc_prc_host}/deactivate/{user_id}'
+    return f'{settings.reverse_proxy_host}/user-service-process/deactivate/{user_id}'
 
 logger.info('   Initiliazing Fast API app')
 app = FastAPI(title="FastAPI")
